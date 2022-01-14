@@ -10,4 +10,4 @@ router.get('/bar', function (ctx, next) {
   ctx.body = 'this is a users/bar response'
 })
 
-export default router
+module.exports = router
