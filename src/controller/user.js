@@ -8,7 +8,7 @@ const { SuccessModal, ErrorModal
 } = require('../modal/ResModal');
 
 const { doCryto}=require('../utils/cryp')
-const { registerUserNameNotExistInfo, registerUserNameExistInfo,registerFailInfo}=require('../modal/errorInfo');
+const { registerUserNameNotExistInfo, registerUserNameExistInfo, registerFailInfo, loginFileInfo}=require('../modal/errorInfo');
 const user = require('../servers/user');
 /**
  * 

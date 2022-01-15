@@ -3,7 +3,7 @@
  * @author 双越老师
  */
 
-const validate = require('./_validate')
+const validate = require('./validate')
 
 // 校验规则
 const SCHEMA = {

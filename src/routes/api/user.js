@@ -10,6 +10,8 @@ const { genValidator }=require('../../middleware/validate')
 router.prefix('/api/user')
 
 
+
+
 //注册路由
 router.post('/register', genValidator(userValidate),async (ctx,next) => { 
     const { userName, password, gender } = ctx.request.body;
