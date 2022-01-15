@@ -8,6 +8,7 @@
     "prd": "cross-env NODE_ENV=production pm2 start bin/www"
   },
   "dependencies": {
+    "ajv": "^6.12.6",
     "cross-env": "^7.0.3",
     "debug": "^4.1.1",
     "ejs": "~2.3.3",
