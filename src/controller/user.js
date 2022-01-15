@@ -8,7 +8,8 @@ const { SuccessModal, ErrorModal
 } = require('../modal/ResModal');
 
 const { doCryto}=require('../utils/cryp')
-const { registerUserNameNotExistInfo, registerUserNameExistInfo,registerFailInfo}=require('../modal/errorInfo')
+const { registerUserNameNotExistInfo, registerUserNameExistInfo,registerFailInfo}=require('../modal/errorInfo');
+const user = require('../servers/user');
 /**
  * 
  * @param {string} userName  用户名
@@ -47,7 +48,26 @@ async function register({ userName,password,gender}) {
     
 }
 
+/**
+ * 
+ * @param {Object} ctx koa2 ctx
+ * @param {string} userName  用户名
+ * @param {string} password  密码
+ */
+async function login(ctx,userName,password) { 
+    let userInfo = await getUserInfo(userName, doCryto(password));
+    if (!userInfo) { 
+        return new ErrorModal(loginFileInfo)
+    }
+    //登录成功
+    if (ctx.session.userInfo===null) { 
+        ctx.session.userInfo = userInfo;
+    }
+    return new SuccessModal();
+
+}
 module.exports = {
     isExist,
-    register
+    register,
+    login
 }
