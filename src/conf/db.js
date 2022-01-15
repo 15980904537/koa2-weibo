@@ -9,11 +9,11 @@ let REDIS_CONF = {
     host:'127.0.0.1'
 }
 let MYSQL_CONF = {
-    host: 'location',
+    host: 'localhost',
     
     user: 'root',
     port: 3306,
-    password: 'zhm123456',
+    password: 'zhm1234567',
     database:'koa2_weibo_db'
 }
 if (isProd) { 

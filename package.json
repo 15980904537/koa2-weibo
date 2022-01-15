@@ -35,5 +35,5 @@
     "nodemon": "^1.19.1",
     "pre-commit": "^1.2.2",
     "supertest": "^6.2.1"
-  },
+  }
 }
